@@ -7,10 +7,10 @@ from sklearn.feature_extraction.text import CountVectorizer
 
 
 # Loading the pre-trained model
-model = pickle.load(open(r"C:\Users\Manisha\DATA SCIENCE\MACHINE LEARNING\nl processing\nb.pkl","rb"))
+model = pickle.load(open("nb.pkl","rb"))
 
 # Loading the CountVectorizer for training
-with open(r"C:\Users\Manisha\DATA SCIENCE\MACHINE LEARNING\nl processing\bow.pkl","rb") as f:
+with open("bow.pkl","rb") as f:
     bow = pickle.load(f)
 
 # Title of the page
@@ -27,4 +27,5 @@ if st.button('Submit'):
         result = model.predict(data)[0]
         st.write(result,"email!")
         if result == 'spam':
-            st.image(r"C:\Users\Manisha\Downloads\spam image.png")
+            st.image("spam image.png")
+        
